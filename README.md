@@ -10,3 +10,6 @@ Content in this repository is organised in folders. Each folder correspond to a 
 
 ### lesson-07
 Students used projects in this folder for practicing the use of the Factory Method design pattern.
+
+### lesson-10
+This project partially implements the example app we are using. 
