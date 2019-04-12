@@ -13,3 +13,6 @@ Students used projects in this folder for practicing the use of the Factory Meth
 
 ### lesson-10
 This project partially implements the example app we are using. 
+
+### lesson-11
+This project features a Derby DB partially configurated to 'Cliente' and 'Pais' tables. The project is also structured in a layered fashion. Students should implement a ClienteDAO including methods for all four CRUD operations.
