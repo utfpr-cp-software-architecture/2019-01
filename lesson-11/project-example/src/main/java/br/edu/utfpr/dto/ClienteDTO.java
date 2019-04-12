@@ -14,7 +14,7 @@ public class ClienteDTO {
     private double limiteCredito;
     private PaisDTO pais;
 
-    public void setNome(String nome) {
+    public void setNome(String nome) throws NomeClienteMenor5CaracteresException {
         if (nome.length() < 5)
             throw new NomeClienteMenor5CaracteresException(nome);
 

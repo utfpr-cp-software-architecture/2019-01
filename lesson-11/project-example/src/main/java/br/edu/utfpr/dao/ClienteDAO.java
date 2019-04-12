@@ -12,7 +12,7 @@ public class ClienteDAO {
     // Responsável por criar a tabela Cliente no banco.
     public ClienteDAO() {
 
-        try (Connection conn = DriverManager.getDriver("jdbc:derby:memory:database;create=true")) {
+        try (Connection conn = DriverManager.getConnection("jdbc:derby:memory:database;create=true")) {
 
             log.info("Criando tabela cliente ...");
             conn.createStatement().executeUpdate(
