@@ -12,7 +12,7 @@ import java.util.List;
 import lombok.extern.java.Log;
 
 @Log
-public class PaisDAO {
+public abstract class PaisDAO extends TemplateDAO {
 
     // Responsável por criar a tabela País no banco
     public PaisDAO() {
@@ -31,7 +31,7 @@ public class PaisDAO {
         }
     }
 
-    public boolean incluir(PaisDTO pais) {
+    public boolean insere(PaisDTO pais) {
         try ( Connection conn = DriverManager.getConnection("jdbc:derby:memory:database")) {
 
             String sql = "INSERT INTO pais (nome, sigla, codigoTelefone) VALUES (?, ?, ?)";
@@ -54,7 +54,7 @@ public class PaisDAO {
         return false;
     }
 
-    public List<PaisDTO> listarTodos() {
+    public List<PaisDTO> listaTodos() {
 
         List<PaisDTO> resultado = new ArrayList<>();
 
@@ -86,7 +86,7 @@ public class PaisDAO {
         return resultado;
     }
 
-    public boolean excluir(int id) {
+    public boolean deleta(int id) {
 
         try ( Connection conn = DriverManager.getConnection("jdbc:derby:memory:database")) {
 
@@ -107,7 +107,7 @@ public class PaisDAO {
         return false;
     }
 
-    public boolean alterar(PaisDTO pais) {
+    public boolean update(PaisDTO pais) {
         try ( Connection conn = DriverManager.getConnection("jdbc:derby:memory:database")) {
 
             String sql = "UPDATE pais SET nome=?, sigla=?, codigoTelefone=? WHERE id=?";
@@ -129,8 +129,8 @@ public class PaisDAO {
         return false;
     }
     
-    public PaisDTO listarPorId (int id) {
-        return this.listarTodos().stream().filter(p -> p.getId() == id).findAny().orElseThrow(RuntimeException::new);
+    public PaisDTO busca (int id) {
+        return this.listaTodos().stream().filter(p -> p.getId() == id).findAny().orElseThrow(RuntimeException::new);
     }
 
 }

@@ -6,13 +6,13 @@ import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class TestaPaisDAO {
+public abstract class TestaPaisDAO {
 
     private static PaisDAO paisDAO;
 
     @BeforeClass
     public static void setup() {
-        paisDAO = new PaisDAO();
+        //paisDAO = new PaisDAO();
     }
 
     @Test
@@ -24,7 +24,7 @@ public class TestaPaisDAO {
                 .sigla("BR")
                 .build();
 
-        Assert.assertTrue(paisDAO.incluir(pais));
+        Assert.assertTrue(paisDAO.insere(pais));
     }
 
     @Test
@@ -35,9 +35,9 @@ public class TestaPaisDAO {
                 .sigla("BR")
                 .build();
 
-        paisDAO.incluir(pais);
+        paisDAO.insere(pais);
 
-        Assert.assertTrue(paisDAO.listarTodos().size() > 0);
+        Assert.assertTrue(paisDAO.listaTodos().size() > 0);
     }
 
     @Test
@@ -49,11 +49,11 @@ public class TestaPaisDAO {
                 .sigla("EUA")
                 .build();
 
-        paisDAO.incluir(pais);
+        paisDAO.insere(pais);
 
-        PaisDTO paisRecuperado = paisDAO.listarTodos().stream().filter(p -> p.getSigla().equalsIgnoreCase(pais.getSigla())).collect(Collectors.toList()).get(0);
+        PaisDTO paisRecuperado = paisDAO.listaTodos().stream().filter(p -> p.getSigla().equalsIgnoreCase(pais.getSigla())).collect(Collectors.toList()).get(0);
 
-        Assert.assertTrue(paisDAO.excluir(paisRecuperado.getId()));
+        Assert.assertTrue(paisDAO.deleta(paisRecuperado.getId()));
     }
 
     @Test
@@ -64,13 +64,13 @@ public class TestaPaisDAO {
                 .sigla("RU")
                 .build();
 
-        paisDAO.incluir(pais);
+        paisDAO.insere(pais);
 
-        PaisDTO paisRecuperado = paisDAO.listarTodos().stream().filter(p -> p.getSigla().equalsIgnoreCase(pais.getSigla())).collect(Collectors.toList()).get(0);
+        PaisDTO paisRecuperado = paisDAO.listaTodos().stream().filter(p -> p.getSigla().equalsIgnoreCase(pais.getSigla())).collect(Collectors.toList()).get(0);
 
         paisRecuperado.setNome("Reino Unido Alterado");
 
-        Assert.assertTrue(paisDAO.alterar(paisRecuperado));
+        Assert.assertTrue(paisDAO.update(paisRecuperado));
     }
 
     @Test
@@ -81,11 +81,11 @@ public class TestaPaisDAO {
                 .sigla("AL")
                 .build();
 
-        paisDAO.incluir(pais);
+        paisDAO.insere(pais);
 
-        PaisDTO paisRecuperado = paisDAO.listarTodos().stream().filter(p -> p.getSigla().equalsIgnoreCase(pais.getSigla())).collect(Collectors.toList()).get(0);
+        PaisDTO paisRecuperado = paisDAO.listaTodos().stream().filter(p -> p.getSigla().equalsIgnoreCase(pais.getSigla())).collect(Collectors.toList()).get(0);
         
-        Assert.assertTrue(paisDAO.listarPorId (paisRecuperado.getId()).getNome().equals(pais.getNome()));
+        Assert.assertTrue(paisDAO.busca (paisRecuperado.getId()).getNome().equals(pais.getNome()));
 
     }
 
