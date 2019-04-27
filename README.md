@@ -16,3 +16,9 @@ This project partially implements the example app we are using.
 
 ### lesson-11
 This project features a Derby DB partially configurated to 'Cliente' and 'Pais' tables. The project is also structured in a layered fashion. Students should implement a ClienteDAO including methods for all four CRUD operations.
+
+### lesson-12
+This project shows example implementations of DAO for entity classes ClienteDTO and PaisDTO.
+
+### lesson-13
+This project partially implements the Template Method design pattern for classes in the 'negocio' layer.
