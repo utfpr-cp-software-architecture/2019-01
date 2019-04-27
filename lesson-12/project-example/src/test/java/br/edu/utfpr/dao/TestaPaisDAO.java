@@ -24,7 +24,7 @@ public class TestaPaisDAO {
                 .sigla("BR")
                 .build();
 
-        Assert.assertTrue(paisDAO.incluir(pais));
+        Assert.assertTrue(paisDAO.inserir(pais));
     }
 
     @Test
@@ -35,7 +35,7 @@ public class TestaPaisDAO {
                 .sigla("BR")
                 .build();
 
-        paisDAO.incluir(pais);
+        paisDAO.inserir(pais);
 
         Assert.assertTrue(paisDAO.listarTodos().size() > 0);
     }
@@ -49,7 +49,7 @@ public class TestaPaisDAO {
                 .sigla("EUA")
                 .build();
 
-        paisDAO.incluir(pais);
+        paisDAO.inserir(pais);
 
         PaisDTO paisRecuperado = paisDAO.listarTodos().stream().filter(p -> p.getSigla().equalsIgnoreCase(pais.getSigla())).collect(Collectors.toList()).get(0);
 
@@ -64,29 +64,13 @@ public class TestaPaisDAO {
                 .sigla("RU")
                 .build();
 
-        paisDAO.incluir(pais);
+        paisDAO.inserir(pais);
 
         PaisDTO paisRecuperado = paisDAO.listarTodos().stream().filter(p -> p.getSigla().equalsIgnoreCase(pais.getSigla())).collect(Collectors.toList()).get(0);
 
         paisRecuperado.setNome("Reino Unido Alterado");
 
         Assert.assertTrue(paisDAO.alterar(paisRecuperado));
-    }
-
-    @Test
-    public void testaListarPorId() {
-        PaisDTO pais = PaisDTO.builder()
-                .codigoTelefone(32)
-                .nome("Alemanha")
-                .sigla("AL")
-                .build();
-
-        paisDAO.incluir(pais);
-
-        PaisDTO paisRecuperado = paisDAO.listarTodos().stream().filter(p -> p.getSigla().equalsIgnoreCase(pais.getSigla())).collect(Collectors.toList()).get(0);
-        
-        Assert.assertTrue(paisDAO.listarPorId (paisRecuperado.getId()).getNome().equals(pais.getNome()));
-
     }
 
 }

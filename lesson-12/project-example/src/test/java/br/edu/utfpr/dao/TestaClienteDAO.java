@@ -43,7 +43,7 @@ public class TestaClienteDAO {
 
         clienteDAO.inserir(cliente);
 
-        Assert.assertTrue(clienteDAO.listar().size() > 0);
+        Assert.assertTrue(clienteDAO.listarTodos().size() > 0);
 
     }
 
@@ -60,7 +60,7 @@ public class TestaClienteDAO {
 
         clienteDAO.inserir(cliente);
 
-        ClienteDTO clienteNoBanco = clienteDAO.listar()
+        ClienteDTO clienteNoBanco = clienteDAO.listarTodos()
                 .stream()
                 .filter(clienteAtual -> clienteAtual.getNome().equals(cliente.getNome()))
                 .findAny()
@@ -84,7 +84,7 @@ public class TestaClienteDAO {
 
         clienteDAO.inserir(cliente);
 
-        ClienteDTO clienteNoBanco = clienteDAO.listar()
+        ClienteDTO clienteNoBanco = clienteDAO.listarTodos()
                 .stream()
                 .filter(clienteAtual -> clienteAtual.getNome().equals(cliente.getNome()))
                 .findAny()

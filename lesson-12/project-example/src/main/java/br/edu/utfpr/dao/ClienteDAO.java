@@ -60,7 +60,7 @@ public class ClienteDAO {
         return false;
     }
 
-    public List<ClienteDTO> listar() {
+    public List<ClienteDTO> listarTodos() {
 
         List<ClienteDTO> resultado = new ArrayList<>();
 
