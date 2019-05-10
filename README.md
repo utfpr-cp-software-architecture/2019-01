@@ -22,3 +22,9 @@ This project shows example implementations of DAO for entity classes ClienteDTO 
 
 ### lesson-13
 This project partially implements the Template Method design pattern for classes in the 'negocio' layer.
+
+### lesson-14
+This project fully implements the Template Method design pattern for dao classes.
+
+### lesson-16
+This project uses the Spring Boot framework and JPA in the DAO package.
