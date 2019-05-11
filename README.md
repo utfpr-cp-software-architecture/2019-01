@@ -28,3 +28,6 @@ This project fully implements the Template Method design pattern for dao classes
 
 ### lesson-16
 This project uses the Spring Boot framework and JPA in the DAO package.
+
+### lesson-17
+This project shows several examples of mappings using JPA annotations. There is also two DAOs.
