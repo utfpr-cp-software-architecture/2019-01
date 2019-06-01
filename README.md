@@ -31,3 +31,6 @@ This project uses the Spring Boot framework and JPA in the DAO package.
 
 ### lesson-17
 This project shows several examples of mappings using JPA annotations. There is also two DAOs.
+
+### lesson-22
+This project takes our example to the web by using html, bootstrap and freemarker technologies
