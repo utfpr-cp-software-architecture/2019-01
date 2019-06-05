@@ -40,6 +40,18 @@
                         <label for="codigo">Idade:</label>
                         <input value="${(clienteAtual.Idade)!}"  name="idade" type="number" class="form-control" id="idade">
                     </div>
+                    <div class="form-group">
+                        <label for="codigo">Limite de Credito:</label>
+                        <input value="${(clienteAtual.limiteCredito)!}"  name="limiteCredito" type="number" class="form-control" id="limiteCredito">
+                    </div>
+                    <div class="form-group">
+                        <label for="pais">Pais:</label>
+                        <select name="pais" id="pais" class="form-control">
+                            <#list paises as pais>
+                                <option value="${pais.nome}">${pais.nome}</option>
+                            </#list>
+                        </select>
+                    </div>
 
                     <button type="submit" class="btn btn-primary">Criar</button>
                 </form>
@@ -54,6 +66,8 @@
                             <th>Nome</th>
                             <th>Telefone</th>
                             <th>Idade</th>
+                            <th>Limite de Credito</th>
+                            <th>País</th>
                             <th>Ações</th>
                         </tr>
                     </thead>
@@ -63,6 +77,8 @@
                                 <td>${cliente.nome}</td>
                                 <td>${cliente.telefone}</td>
                                 <td>${cliente.idade}</td>
+                                <td>${cliente.limiteCredito}</td>
+                                <td>${cliente.pais}</td>
                                 <td>
                                     <a href="/cliente/prepara-alterar?id=${cliente.id}">Alterar</a>
                                     <a href="/cliente/excluir?id=${cliente.id}">Excluir</a>
