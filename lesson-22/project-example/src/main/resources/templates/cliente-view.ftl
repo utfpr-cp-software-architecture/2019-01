@@ -43,9 +43,9 @@
 
                     <div class="form-group">
                         <label for="pais">Example select</label>
-                        <select class="form-control" id="paisId">
+                        <select class="form-control" name="paisId" id="paisId">
                             <#list paises as pais>
-                                <option value="${(pais.id)!}">${pais.nome}</option>
+                                <option value="${pais.id}">${pais.nome}</option>
                             </#list>
                         </select>
                     </div>
