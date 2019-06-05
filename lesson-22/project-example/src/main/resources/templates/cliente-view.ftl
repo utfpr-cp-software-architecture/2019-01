@@ -40,6 +40,16 @@
                         <label for="telefone">Telefone:</label>
                         <input value="${(cliente.telefone)!}"  name="telefone" type="text" class="form-control" id="telefone">
                     </div>
+
+                    <div class="form-group">
+                        <label for="pais">Example select</label>
+                        <select class="form-control" id="paisId">
+                            <#list paises as pais>
+                                <option value="${(pais.id)!}">${pais.nome}</option>
+                            </#list>
+                        </select>
+                    </div>
+
                     <div class="form-group">
                         <label for="limiteCredito">Limite de Crédito:</label>
                         <input value="${(cliente.limiteCredito)!}"  name="limiteCredito" type="number" class="form-control" id="limiteCredito">
