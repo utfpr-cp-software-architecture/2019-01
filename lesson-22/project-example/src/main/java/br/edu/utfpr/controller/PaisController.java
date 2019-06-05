@@ -1,9 +1,10 @@
-package br.edu.utfpr.apresentacao;
+package br.edu.utfpr.controller;
 
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import br.edu.utfpr.model.PaisModel;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;

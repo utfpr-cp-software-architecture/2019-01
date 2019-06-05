@@ -1,4 +1,4 @@
-package br.edu.utfpr.apresentacao;
+package br.edu.utfpr.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
