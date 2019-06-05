@@ -1,5 +1,6 @@
 package br.edu.utfpr;
 
+import br.edu.utfpr.dao.ClienteDAO;
 import br.edu.utfpr.dao.PaisDAO;
 import java.util.stream.Stream;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,10 +11,13 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class ProjectExampleApplication implements CommandLineRunner {
 
+    private final ClienteDAO ClienteDAO;
+    
+    
     private final PaisDAO paisDAO;
-
     @Autowired
-    public ProjectExampleApplication(PaisDAO paisDAO) {
+    public ProjectExampleApplication(PaisDAO paisDAO, ClienteDAO clienteDAO) {
+        this.ClienteDAO = clienteDAO;
         this.paisDAO = paisDAO;
     }
 
