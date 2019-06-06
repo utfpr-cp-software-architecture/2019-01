@@ -33,7 +33,6 @@ public class ClienteController {
             PaisModel.builder().id(new Long(2)).nome("Reino Unido").sigla("RU").codigoTelefone(44).build()
         ).collect(Collectors.toList());
     }
-
     @GetMapping ("/cliente")
     public String inicial(Model data) {
 
