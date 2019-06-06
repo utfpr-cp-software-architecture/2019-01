@@ -46,7 +46,7 @@
                     </div>
                     <div class="form-group">
                         <label for="pais">País:</label>
-                        <input value="${(clienteAtual.pais.getNome())!}"  name="pais" type="text" class="form-control" id="pais">
+                        <input value="${(clienteAtual.pais!}"  name="pais" type="text" class="form-control" id="pais">
                     </div>
 
                     <button type="submit" class="btn btn-primary">Criar</button>
