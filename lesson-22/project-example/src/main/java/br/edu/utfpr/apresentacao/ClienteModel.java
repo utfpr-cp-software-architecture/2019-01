@@ -1,5 +1,6 @@
 package br.edu.utfpr.apresentacao;
 
+import br.edu.utfpr.dao.Pais;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -15,5 +16,5 @@ public class ClienteModel {
 	private int idade;
 	private String telefone;
 	private double limiteCredito;
-	private PaisModel pais;    
+	private PaisModel pais;
 }

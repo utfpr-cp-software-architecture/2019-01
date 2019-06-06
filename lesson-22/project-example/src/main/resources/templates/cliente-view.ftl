@@ -41,8 +41,8 @@
                         <input value="${(clienteAtual.telefone)!}"  name="telefone" type="number" class="form-control" id="telefone">
                     </div>
                     <div class="form-group">
-                        <label for="limitDeCredito">Limite de crédito:</label>
-                        <input value="${(clienteAtual.limiteDeCredito)!}"  name="limiteDeCredito" type="text" class="form-control" id="limiteDeCredito">
+                        <label for="limitCredito">Limite de crédito:</label>
+                        <input value="${(clienteAtual.limiteCredito)!}"  name="limiteCredito" type="text" class="form-control" id="limiteCredito">
                     </div>
                     <div class="form-group">
                         <label for="pais">País:</label>
@@ -64,7 +64,6 @@
                             <th>Telefone</th>
                             <th>Limite de crédito</th>
                             <th>Pais</th>
-                            <th>Ações</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -73,12 +72,8 @@
                                 <td>${cliente.nome}</td>
                                 <td>${cliente.idade}</td>
                                 <td>${cliente.telefone}</td>
-                                <td>${cliente.limiteDeCredito}</td>                                
+                                <td>${cliente.limiteCredito}</td>
                                 <td>${cliente.pais}</td>
-                                <td>
-                                    <a href="/cliente/prepara-alterar?id=${pais.id}">Alterar</a>
-                                    <a href="/cliente/excluir?id=${pais.id}">Excluir</a>
-                                </td>
                             </tr>        
                         </#list>
                     </tbody>

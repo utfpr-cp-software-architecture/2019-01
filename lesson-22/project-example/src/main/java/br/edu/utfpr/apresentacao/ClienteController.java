@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import br.edu.utfpr.dao.Pais;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,8 +18,8 @@ public class ClienteController {
 
     public ClienteController() {
         clientes = Stream.of(
-            ClienteModel.builder().id(new Long(1)).nome("Kamilla").idade(20).telefone("45678901").limiteCredito(1500.50).pais(PaisModel.builder().sigla("BR").build()).build(),
-            ClienteModel.builder().id(new Long(2)).nome("Gustavo").idade(21).telefone("12345678").limiteCredito(960.00).pais(PaisModel.builder().sigla("BR").build()).build()
+            ClienteModel.builder().id(new Long(1)).nome("Kamilla").idade(20).telefone("45678901").limiteCredito(1500.50).pais(PaisModel.builder().id(new Long(1)).build()).build(),
+            ClienteModel.builder().id(new Long(2)).nome("Gustavo").idade(21).telefone("12345678").limiteCredito(960.00).pais(PaisModel.builder().id(new Long(1)).build()).build()
         ).collect(Collectors.toList());
     }
 
