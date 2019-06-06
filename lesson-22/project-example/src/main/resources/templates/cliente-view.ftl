@@ -71,6 +71,7 @@
                             <th>Telefone</th>
                             <th>Limite de Crédito</th>
                             <th>País</th>
+                            <th>Ações</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -80,10 +81,10 @@
                                 <td>${cada.idade}</td>
                                 <td>${cada.telefone}</td>
                                 <td>${cada.limiteCredito}</td>
-                                <td>${cada.Pais.nome}</td>
+                                <td>${cada.pais.nome}</td>
                                 <td>
-                                    <a href="/pais/prepara-alterar?id=${pais.id}">Alterar</a>
-                                    <a href="/pais/excluir?id=${pais.id}">Excluir</a>
+                                    <a href="/cliente/prepara-alterar?id=${cada.id}">Alterar</a>
+                                    <a href="/cliente/excluir?id=${cada.id}">Excluir</a>
                                 </td>
                             </tr>        
                         </#list>
