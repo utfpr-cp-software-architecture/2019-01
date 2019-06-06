@@ -47,10 +47,11 @@
                     </div>
                     <div class="form-group">
                         <label for="pais">País:</label>
-                        <input value="${(clienteAtual.pais.nome)!}"  name="pais" type="text" class="form-control" id="pais">
-                        <select>
+                        
+                        <select name="pais" class="form-control" id="pais">
                             <#list paises as pais>
-                             <option value=${pais}>${pais.nome}</option>
+                             <option value=${pais}>${pais}</option>
+                            </#list>
                         <select>
                         
                     </div>
