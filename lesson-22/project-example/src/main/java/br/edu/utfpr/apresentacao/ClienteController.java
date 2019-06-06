@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class ClienteController {
     private List<ClienteModel> clientes;
-
     ArrayList <String> paises = new ArrayList<>();
+    
     
     public ClienteController(){    
         paises.add("Brasil");
@@ -42,14 +42,14 @@ public class ClienteController {
         */
         cliente.setId(new Long(clientes.size() + 1));
         clientes.add(cliente);
-        return "redirect:/cliente";
+        return "redirect:/clientes";
     }
 
     @GetMapping ("/cliente/excluir")
     public String excluir(@RequestParam int id){
         clientes.remove(id - 1);
 
-        return "redirect:/cliente";
+        return "redirect:/clientes";
     }
 
 }
