@@ -65,7 +65,7 @@
                                 <td>${cliente.idade}</td>
                                 <td>${cliente.telefone}</td>
                                 <td>${cliente.limiteCredito}</td>
-                                <td>#{cliente.pais}</td>
+                                <td>#{cliente.pais.nome}</td>
                                 <td>
                                     <a href="/clientes/prepara-alterar?id=${cliente.id}">Alterar</a>
                                     <a href="/clientes/excluir?id=${cliente.id}">Excluir</a>
