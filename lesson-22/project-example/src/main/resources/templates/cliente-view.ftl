@@ -19,7 +19,7 @@
         </div>
         <div class="row">
             <div class="col">
-                <form action="/pais/criar" method="post">
+                <form action="/clientes/criar" method="post">
                     <div class="form-group">
                         <label for="nome">Nome:</label>
                         <input value="${(cliente.nome)!}" name="nome" type="text" class="form-control" id="nome">
