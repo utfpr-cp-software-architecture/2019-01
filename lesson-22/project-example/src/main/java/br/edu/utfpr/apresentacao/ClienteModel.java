@@ -1,5 +1,6 @@
 package br.edu.utfpr.apresentacao;
 
+import br.edu.utfpr.dto.PaisDTO;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -9,10 +10,12 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class PaisModel {
-    private Long id;
+public class ClienteModel {
+    private int id;
     private String nome;
-    private String sigla;
-    private int codigoTelefone;
+    private int idade;
+    private String telefone;
+    private double limiteCredito;
+    private PaisModel pais;
     
 }

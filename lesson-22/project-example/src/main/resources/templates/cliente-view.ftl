@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Gerencia Pais</title>
+    <title>Gerencia Cliente</title>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
@@ -22,23 +22,35 @@
 <body>
     <div class="container">
         <div class="jumbotron">
-            <h1>Gerenciamento de País</h1>
-            <p>Essa página é responsável por fazer o geranciamento de paises. </p>
+            <h1>Gerenciamento de Cliente</h1>
+            <p>Essa página é responsável por fazer a inserção e listagem de clientes. </p>
         </div>
         <div class="row">
             <div class="col">
-                <form action="/pais/criar" method="post">
+                <form action="/cliente/criar" method="post">
                     <div class="form-group">
                         <label for="nome">Nome:</label>
-                        <input value="${(paisAtual.nome)!}" name="nome" type="text" class="form-control" id="nome">
+                        <input value="${(cliente.nome)!}" name="nome" type="text" class="form-control" id="nome">
                     </div>
                     <div class="form-group">
-                        <label for="sigla">Sigla:</label>
-                        <input value="${(paisAtual.sigla)!}"  name="sigla" type="text" class="form-control" id="sigla">
+                        <label for="idade">Idade:</label>
+                        <input value="${(cliente.idade)!}"  name="idade" type="number" class="form-control" id="idade">
                     </div>
                     <div class="form-group">
-                        <label for="codigo">Código Telefone:</label>
-                        <input value="${(paisAtual.codigoTelefone)!}"  name="codigoTelefone" type="number" class="form-control" id="codigo">
+                        <label for="telefone">Telefone:</label>
+                        <input value="${(cliente.telefone)!}"  name="telefone" type="text" class="form-control" id="telefone">
+                    </div>
+                    <div class="form-group">
+                        <label for="limite">Limite de crédito:</label>
+                        <input value="${(cliente.limite)!}"  name="limite" type="number" class="form-control" id="limite">
+                    </div>
+                    <div class="form-group">
+                        <label for="pais">País:</label>
+                        <select class="form-control">
+                            <#list paises as pais >
+                                <option value="${pais.id}">${pais.nome}</option>
+                            </#list>
+                        </select>
                     </div>
 
                     <button type="submit" class="btn btn-primary">Criar</button>
@@ -52,21 +64,26 @@
                     <thead class="thead-dark">
                         <tr>
                             <th>Nome</th>
-                            <th>Sigla</th>
-                            <th>Código Telefone</th>
-                            <th>Ações</th>
+                            <th>Idade</th>
+                            <th>Telefone</th>
+                            <th>Limite de crédito</th>
+                            <th>País</th>
+                            <!-- <th>Ações</th> -->
                         </tr>
                     </thead>
                     <tbody>
-                        <#list paises as pais>
+                        <#list clientes as cliente>
                             <tr>
-                                <td>${pais.nome}</td>
-                                <td>${pais.sigla}</td>
-                                <td>${pais.codigoTelefone}</td>
-                                <td>
+                                <td>${cliente.nome}</td>
+                                <td>${cliente.idade}</td>
+                                <td>${cliente.telefone}</td>
+                                <td>${cliente.limiteCredito}</td>
+                               <td>${cliente.pais.nome}</td>
+                                <!-- <td>
                                     <a href="/pais/prepara-alterar?id=${pais.id}">Alterar</a>
                                     <a href="/pais/excluir?id=${pais.id}">Excluir</a>
                                 </td>
+                                -->
                             </tr>        
                         </#list>
                     </tbody>
