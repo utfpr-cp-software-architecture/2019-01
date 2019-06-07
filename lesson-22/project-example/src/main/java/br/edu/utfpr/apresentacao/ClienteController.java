@@ -29,7 +29,7 @@ public class ClienteController {
         ).collect(Collectors.toList());
     }
 
-    @GetMapping ("/cliente")
+    @GetMapping ("/clientes")
     public String inicial(Model data) {
 
         data.addAttribute("clientes", clientes);
@@ -37,7 +37,7 @@ public class ClienteController {
         return "cliente-view";
     }
 
-    @PostMapping ("/cliente/criar")
+    @PostMapping ("/clientes/criar")
     public String criar(ClienteModel cliente) {
 
         cliente.setId(new Long(clientes.size() + 1));
@@ -47,14 +47,14 @@ public class ClienteController {
         return "redirect:/cliente";
     }
 
-    @GetMapping ("/cliente/excluir")
+    @GetMapping ("/clientes/excluir")
     public String excluir (@RequestParam int id) {
         clientes.remove(id - 1);
 
-        return "redirect:/cliente";
+        return "redirect:/clientes";
     }
 
-    @GetMapping ("/cliente/prepara-alterar")
+    @GetMapping ("/clientes/prepara-alterar")
     public String preparaAlterar (@RequestParam int id, Model data){
 
         ClienteModel cliente = clientes.get(id - 1);
