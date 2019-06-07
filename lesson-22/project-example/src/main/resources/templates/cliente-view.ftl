@@ -19,7 +19,7 @@
         </div>
         <div class="row">
             <div class="col">
-                <form action="/pais/criar" method="post">
+                <form action="/clientes/criar" method="post">
                     <div class="form-group">
                         <label for="nome">Nome:</label>
                         <input value="${(cliente.nome)!}" name="nome" type="text" class="form-control" id="nome">
@@ -65,7 +65,7 @@
                                 <td>${cliente.idade}</td>
                                 <td>${cliente.telefone}</td>
                                 <td>${cliente.limiteCredito}</td>
-                                <td>#{cliente.pais}</td>
+                                <td>#{cliente.pais.nome}</td>
                                 <td>
                                     <a href="/clientes/prepara-alterar?id=${cliente.id}">Alterar</a>
                                     <a href="/clientes/excluir?id=${cliente.id}">Excluir</a>
