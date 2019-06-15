@@ -34,3 +34,6 @@ This project shows several examples of mappings using JPA annotations. There is 
 
 ### lesson-22
 This project takes our example to the web by using html, bootstrap and freemarker technologies
+
+### lesson-25
+This project exposes application functionalities as REST web services. In addition, the presentation layer is fully detached, enabling the back-end and front-end separated deployments.
